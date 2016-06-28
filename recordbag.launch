@@ -1,0 +1,11 @@
+<launch> 
+
+  <!-- Record RGB to Rosbag file newrgb.bag and save it in bagfile folder-->
+  <node pkg="rosbag" type="record" name="recordrgb" output="screen" 
+  	args="/camera/rgb/image_raw -O $(find bag_to_depth_image)/bagfile/newrgb"/>  
+
+  <!-- Record depth to Rosbag file newdepth.bag and save it in bagfile folder-->
+  <node pkg="rosbag" type="record" name="recorddepth" output="screen" 
+  	args="/camera/depth/image -O $(find bag_to_depth_image)/bagfile/newdepth"/>  
+  	
+</launch> 
