@@ -8,7 +8,7 @@ This package has been tested using:
 *  Asus Xtion Pro Live
 *  Kinect v1
 
-The purpose of this package is to get save depth images for visualization purposes or processing ..etc
+The purpose of this package is to save depth images for visualization purposes or processing ..etc
 
 Quick Start:
 ===============
