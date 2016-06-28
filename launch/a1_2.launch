@@ -1,0 +1,28 @@
+<launch>
+
+    <arg name="camera1_id" default="1@0" />
+    <arg name="camera2_id" default="2@0" />
+  <!--  <arg name="depth_registration" default="true" />-->
+
+  <!-- Default parameters-->
+    <arg name="camera1_name" default="asus1" />
+    <arg name="camera2_name" default="asus2" />
+
+ <!-- Putting the time back to real time-->
+    <rosparam>
+       /use_sim_time : false
+    </rosparam>
+
+    <include file="$(find openni_launch)/launch/openni.launch">
+        <arg name="device_id" value="$(arg camera1_id)" />
+        <arg name="camera" value="$(arg camera1_name)" />
+   <!--     <arg name="depth_registration" value="$(arg depth_registration)" />-->
+     </include>
+
+    <include file="$(find openni_launch)/launch/openni.launch">
+        <arg name="device_id" value="$(arg camera2_id)" />
+        <arg name="camera" value="$(arg camera2_name)" />
+   <!--     <arg name="depth_registration" value="$(arg depth_registration)" />-->
+     </include>
+
+  </launch>
