@@ -1,0 +1,17 @@
+<launch> 
+
+  <!-- Record RGB to Rosbag file newrgb.bag and save it in bagfile folder-->
+  <node pkg="rosbag" type="record" name="recordrgb1" output="screen" 
+  	args="/asus1/rgb/image_raw -O $(find bag_to_depth_image)/bagfile/asus1newrgb"/>  
+
+  <node pkg="rosbag" type="record" name="recordrgb2" output="screen" 
+  	args="/asus2/rgb/image_raw -O $(find bag_to_depth_image)/bagfile/asus2newrgb"/>  
+  	
+  <!-- Record depth to Rosbag file newdepth.bag and save it in bagfile folder-->
+  <node pkg="rosbag" type="record" name="recorddepth1" output="screen" 
+  	args="/asus1/depth/image -O $(find bag_to_depth_image)/bagfile/asus1newdepth"/>
+  	
+  <node pkg="rosbag" type="record" name="recorddepth2" output="screen" 
+  	args="/asus2/depth/image -O $(find bag_to_depth_image)/bagfile/asus2newdepth"/>  
+  	
+</launch> 
